@@ -12,6 +12,7 @@ class MainPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        backgroundColor: Colors.grey.shade50,
         body: NestedScrollView(
             headerSliverBuilder:
                 (BuildContext context, bool innerBoxIsScrolled) {
@@ -22,7 +23,7 @@ class MainPage extends StatelessWidget {
                       Text("Currency App"),
                       Spacer(),
                       Text(" App"),
-                      Icon(Icons.add),
+                      InkWell(onTap: () {}, child: Icon(Icons.add)),
                     ],
                   ),
                   pinned: true,
@@ -42,7 +43,7 @@ class MainPage extends StatelessWidget {
               ];
             },
             body: TabBarView(
-              physics: Platform.isIOS ? BouncingScrollPhysics() : null,
+              physics: BouncingScrollPhysics(),
               children: [
                 ExchangeRatesPage(),
                 FavoritesPage(),

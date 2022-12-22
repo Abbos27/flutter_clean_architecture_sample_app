@@ -7,22 +7,52 @@ class CurrencyItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double avatarRadius = 60;
-    double horizontalPadding = 30;
+    double avatarRadius = 50;
+    double horizontalPadding = 25;
     return SizedBox(
-      height: 120,
+      height: 100,
       child: Stack(
         children: [
           Positioned.fill(
             child: Padding(
-              padding: EdgeInsets.symmetric(
-                  vertical: 12, horizontal: horizontalPadding),
+              padding: EdgeInsets.only(
+                  top: 4,
+                  bottom: 8,
+                  right: horizontalPadding,
+                  left: horizontalPadding),
               child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(8),
-                ),
                 width: double.infinity,
+                child: Card(
+                  elevation: 3,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Text(
+                        "Euro",
+                        style: TextStyle(fontSize: 16),
+                      ),
+                      Text(
+                        "1 usd = 11255.55",
+                        style: TextStyle(fontSize: 18),
+                      ),
+                      Spacer(),
+                      Text(
+                        "Updated at : 22.10.2022 | 19:55",
+                        style: TextStyle(
+                            fontSize: 12, color: Colors.grey.shade700),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
