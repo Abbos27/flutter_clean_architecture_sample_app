@@ -1,9 +1,12 @@
 import 'dart:ffi';
 
+import 'package:currency_app/features/exchange_rates/data/models/currency.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyItemWidget extends StatelessWidget {
-  const CurrencyItemWidget({Key? key}) : super(key: key);
+  final Currency? currency;
+
+  const CurrencyItemWidget({Key? key, this.currency}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class CurrencyItemWidget extends StatelessWidget {
                   bottom: 8,
                   right: horizontalPadding,
                   left: horizontalPadding),
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: Card(
                   elevation: 3,
@@ -34,16 +37,16 @@ class CurrencyItemWidget extends StatelessWidget {
                         height: 8,
                       ),
                       Text(
-                        "Euro",
+                        currency?.nominal ?? "",
                         style: TextStyle(fontSize: 16),
                       ),
                       Text(
-                        "1 usd = 11255.55",
+                        "${currency?.nominal} = ${currency?.rate}",
                         style: TextStyle(fontSize: 18),
                       ),
                       Spacer(),
                       Text(
-                        "Updated at : 22.10.2022 | 19:55",
+                        "Updated at : ${currency?.date} | 19:55",
                         style: TextStyle(
                             fontSize: 12, color: Colors.grey.shade700),
                       ),
@@ -61,7 +64,9 @@ class CurrencyItemWidget extends StatelessWidget {
             child: SizedBox(
               width: avatarRadius,
               height: avatarRadius,
-              child: Center(child: CircleAvatar()),
+              child: Center(
+                child: CircleAvatar(),
+              ),
             ),
           )
         ],

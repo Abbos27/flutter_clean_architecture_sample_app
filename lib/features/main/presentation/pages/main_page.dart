@@ -14,41 +14,41 @@ class MainPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.grey.shade50,
         body: NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverAppBar(
-                  title: Row(
-                    children: [
-                      Text("Currency App"),
-                      Spacer(),
-                      Text(" App"),
-                      InkWell(onTap: () {}, child: Icon(Icons.add)),
-                    ],
-                  ),
-                  pinned: true,
-                  floating: true,
-                  forceElevated: innerBoxIsScrolled,
-                  bottom: TabBar(
-                    tabs: [
-                      Tab(
-                        text: 'Exchange rates',
-                      ),
-                      Tab(
-                        text: 'Favorites',
-                      ),
-                    ],
-                  ),
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                title: Row(
+                  children: [
+                    Text("Currency App"),
+                    Spacer(),
+                    Text(" App"),
+                    InkWell(onTap: () {}, child: Icon(Icons.add)),
+                  ],
                 ),
-              ];
-            },
-            body: TabBarView(
-              physics: BouncingScrollPhysics(),
-              children: [
-                ExchangeRatesPage(),
-                FavoritesPage(),
-              ],
-            )),
+                pinned: true,
+                floating: true,
+                forceElevated: innerBoxIsScrolled,
+                bottom: const TabBar(
+                  tabs: [
+                    Tab(
+                      text: 'Exchange rates',
+                    ),
+                    Tab(
+                      text: 'Favorites',
+                    ),
+                  ],
+                ),
+              ),
+            ];
+          },
+          body: TabBarView(
+            physics: BouncingScrollPhysics(),
+            children: [
+              ExchangeRatesPage(),
+              FavoritesPage(),
+            ],
+          ),
+        ),
       ),
     );
   }
