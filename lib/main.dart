@@ -1,5 +1,7 @@
 import 'package:currency_app/app.dart';
 import 'package:currency_app/core/app_bloc/app_bloc.dart';
+import 'package:currency_app/features/exchange_rates/presentation/bloc/exchange_rates_bloc.dart';
+import 'package:currency_app/injector_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,6 +21,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (context) => AppBloc(),
+        ),
+        BlocProvider(
+          create: (context) => sl<ExchangeRatesBloc>(),
         ),
       ],
       child: const App(),
