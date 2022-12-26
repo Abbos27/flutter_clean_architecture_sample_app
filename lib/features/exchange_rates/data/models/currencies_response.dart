@@ -1,26 +1,49 @@
 import 'package:currency_app/features/exchange_rates/data/models/currency.dart';
+import 'package:currency_app/features/exchange_rates/domain/entities/currency_entity.dart'
+    as entity;
 
 class CurrenciesResponse {
   CurrenciesResponse({
-    this.currencies,
+    this.data,
   });
 
   CurrenciesResponse.fromJson(dynamic json) {
     if (json['currencies'] != null) {
-      currencies = [];
+      data = [];
       json['currencies'].forEach((v) {
-        currencies?.add(Currency.fromJson(v));
+        data?.add(Currency.fromJson(v));
       });
     }
   }
 
-  List<Currency>? currencies;
+  List<Currency>? data;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    if (currencies != null) {
-      map['currencies'] = currencies?.map((v) => v.toJson()).toList();
+    if (data != null) {
+      map['currencies'] = data?.map((v) => v.toJson()).toList();
     }
     return map;
+  }
+}
+
+extension CurrenciesResponseToEntity on CurrenciesResponse {
+  entity.CurrencyEntity toEntity() {
+    if (data != null) {
+      final currencies = data?.map(
+        (currencies) {
+          return entity.Currency(
+            currencies.nominal,
+            currencies.rate,
+            currencies.diff,
+            currencies.date,
+            currencies.ccy,
+          );
+        },
+      ).toList();
+      return entity.CurrencyEntity(currencies);
+    } else {
+      return const entity.CurrencyEntity(null);
+    }
   }
 }
