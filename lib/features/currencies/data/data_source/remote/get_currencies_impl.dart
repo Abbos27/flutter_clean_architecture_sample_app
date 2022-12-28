@@ -1,7 +1,7 @@
 import 'package:currency_app/constants/constants.dart';
 import 'package:currency_app/core/error/exeptions.dart';
-import 'package:currency_app/features/exchange_rates/data/data_source/remote/get_currencies.dart';
-import 'package:currency_app/features/exchange_rates/data/models/currencies_response.dart';
+import 'package:currency_app/features/currencies/data/data_source/remote/get_currencies.dart';
+import 'package:currency_app/features/currencies/data/models/currencies_response.dart';
 import 'package:dio/dio.dart';
 
 class GetCurrenciesRemoteDataSourceImpl

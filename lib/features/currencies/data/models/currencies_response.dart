@@ -1,5 +1,5 @@
-import 'package:currency_app/features/exchange_rates/data/models/currency.dart';
-import 'package:currency_app/features/exchange_rates/domain/entities/currency_entity.dart'
+import 'package:currency_app/features/currencies/data/models/currency.dart';
+import 'package:currency_app/features/currencies/domain/entities/currency_entity.dart'
     as entity;
 
 class CurrenciesResponse {

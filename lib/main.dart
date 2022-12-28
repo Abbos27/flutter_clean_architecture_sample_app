@@ -1,6 +1,6 @@
 import 'package:currency_app/app.dart';
 import 'package:currency_app/core/app_bloc/app_bloc.dart';
-import 'package:currency_app/features/exchange_rates/presentation/bloc/exchange_rates_bloc.dart';
+import 'package:currency_app/features/currencies/presentation/bloc/currencies_bloc.dart';
 import 'package:currency_app/injector_container.dart' as di;
 import 'package:currency_app/injector_container.dart';
 import 'package:flutter/material.dart';

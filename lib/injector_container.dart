@@ -1,10 +1,10 @@
 import 'package:currency_app/core/app_bloc/app_bloc.dart';
-import 'package:currency_app/features/exchange_rates/data/data_source/remote/get_currencies.dart';
-import 'package:currency_app/features/exchange_rates/data/data_source/remote/get_currencies_impl.dart';
-import 'package:currency_app/features/exchange_rates/data/repository/exchange_rates_repository_impl.dart';
-import 'package:currency_app/features/exchange_rates/domain/repositories/exchange_rates_repository.dart';
-import 'package:currency_app/features/exchange_rates/domain/usecases/get_currencies.dart';
-import 'package:currency_app/features/exchange_rates/presentation/bloc/exchange_rates_bloc.dart';
+import 'package:currency_app/features/currencies/data/data_source/remote/get_currencies.dart';
+import 'package:currency_app/features/currencies/data/data_source/remote/get_currencies_impl.dart';
+import 'package:currency_app/features/currencies/data/repository/currencies_repository_impl.dart';
+import 'package:currency_app/features/currencies/domain/repositories/currencies_repository.dart';
+import 'package:currency_app/features/currencies/domain/usecases/get_currencies.dart';
+import 'package:currency_app/features/currencies/presentation/bloc/currencies_bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive/hive.dart';
@@ -25,8 +25,10 @@ Future<void> init() async {
         ),
       ),
   );
+
   ///Core
   sl.registerSingleton<AppBloc>(AppBloc());
+
   /// Features
   getCurrencies();
 }
@@ -43,13 +45,13 @@ void getCurrencies() {
   sl.registerLazySingleton<GetCurrencies>(() => GetCurrencies(sl()));
 
   ///Repository
-  sl.registerLazySingleton<ExchangeRatesRepository>(
-      () => ExchangeRatesRepositoryImpl(
-            sl(),
-          ));
-  ///Data
-  sl.registerLazySingleton<GetCurrenciesRemoteDataSource>(
-          () => GetCurrenciesRemoteDataSourceImpl(
+  sl.registerLazySingleton<CurrenciesRepository>(() => CurrenciesRepositoryImpl(
         sl(),
       ));
+
+  ///Data
+  sl.registerLazySingleton<GetCurrenciesRemoteDataSource>(
+      () => GetCurrenciesRemoteDataSourceImpl(
+            sl(),
+          ));
 }

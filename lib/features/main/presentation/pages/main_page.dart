@@ -1,6 +1,5 @@
 import 'dart:io';
-
-import 'package:currency_app/features/exchange_rates/presentation/pages/exchange_rates_page.dart';
+import 'package:currency_app/features/currencies/presentation/pages/currencies_page.dart';
 import 'package:currency_app/features/favorite_currencies/presentation/pages/FavoritesPage.dart';
 import 'package:flutter/material.dart';
 
@@ -41,7 +40,7 @@ class MainPage extends StatelessWidget {
               ),
             ];
           },
-          body: const TabBarView(
+          body:  const TabBarView(
             physics: BouncingScrollPhysics(),
             children: [
               ExchangeRatesPage(),

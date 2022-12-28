@@ -1,10 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:currency_app/features/exchange_rates/domain/usecases/get_currencies.dart';
-import 'package:equatable/equatable.dart';
+import 'package:currency_app/features/currencies/domain/usecases/get_currencies.dart';
+import 'package:currency_app/features/currencies/presentation/bloc/currencies_event.dart';
+import 'package:currency_app/features/currencies/presentation/bloc/currencies_state.dart';
 
-part 'exchange_rates_event.dart';
 
-part 'exchange_rates_state.dart';
 
 class ExchangeRatesBloc extends Bloc<ExchangeRatesEvent, ExchangeRatesState> {
   final GetCurrencies getCurrencies;

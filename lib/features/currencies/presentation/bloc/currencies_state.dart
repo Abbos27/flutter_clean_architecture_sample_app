@@ -1,4 +1,4 @@
-part of 'exchange_rates_bloc.dart';
+import 'package:equatable/equatable.dart';
 
 abstract class ExchangeRatesState extends Equatable {
   const ExchangeRatesState();
@@ -7,4 +7,11 @@ abstract class ExchangeRatesState extends Equatable {
 class ExchangeRatesInitial extends ExchangeRatesState {
   @override
   List<Object> get props => [];
+}
+
+class ExchangeListFetched extends ExchangeRatesState {
+  const ExchangeListFetched();
+
+  @override
+  List<Object?> get props => [];
 }

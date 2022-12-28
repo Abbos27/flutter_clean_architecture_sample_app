@@ -1,5 +1,5 @@
-import 'package:currency_app/features/exchange_rates/presentation/bloc/exchange_rates_bloc.dart';
-import 'package:currency_app/features/exchange_rates/presentation/pages/exchange_rates_page.dart';
+import 'package:currency_app/features/currencies/presentation/bloc/currencies_bloc.dart';
+import 'package:currency_app/features/currencies/presentation/pages/currencies_page.dart';
 import 'package:currency_app/features/favorite_currencies/presentation/pages/FavoritesPage.dart';
 import 'package:currency_app/features/main/presentation/pages/main_page.dart';
 import 'package:currency_app/injector_container.dart';

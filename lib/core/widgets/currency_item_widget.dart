@@ -1,5 +1,6 @@
-import 'package:currency_app/features/exchange_rates/domain/entities/currency_entity.dart';
 import 'package:flutter/material.dart';
+
+import '../../features/currencies/domain/entities/currency_entity.dart';
 
 class CurrencyItemWidget extends StatelessWidget {
   final Currency? currency;
@@ -31,7 +32,7 @@ class CurrencyItemWidget extends StatelessWidget {
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Text(
@@ -42,13 +43,13 @@ class CurrencyItemWidget extends StatelessWidget {
                         "${currency?.nominal} = ${currency?.rate}",
                         style: TextStyle(fontSize: 18),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Text(
                         "Updated at : ${currency?.date} | 19:55",
                         style: TextStyle(
                             fontSize: 12, color: Colors.grey.shade700),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                     ],
@@ -62,7 +63,7 @@ class CurrencyItemWidget extends StatelessWidget {
             child: SizedBox(
               width: avatarRadius,
               height: avatarRadius,
-              child: Center(
+              child: const Center(
                 child: CircleAvatar(),
               ),
             ),
