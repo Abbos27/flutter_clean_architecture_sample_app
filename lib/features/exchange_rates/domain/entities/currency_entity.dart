@@ -1,9 +1,9 @@
 import 'package:equatable/equatable.dart';
 
-class CurrencyEntity extends Equatable {
+class CurrenciesEntity extends Equatable {
   final List<Currency>? data;
 
-  const CurrencyEntity(this.data);
+  const CurrenciesEntity(this.data);
 
   @override
   List<Object?> get props => throw UnimplementedError();

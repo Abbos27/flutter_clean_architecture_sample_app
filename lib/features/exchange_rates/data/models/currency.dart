@@ -55,3 +55,4 @@ class Currency {
     return map;
   }
 }
+

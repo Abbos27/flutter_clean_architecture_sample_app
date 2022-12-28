@@ -28,7 +28,7 @@ class CurrenciesResponse {
 }
 
 extension CurrenciesResponseToEntity on CurrenciesResponse {
-  entity.CurrencyEntity toEntity() {
+  entity.CurrenciesEntity toEntity() {
     if (data != null) {
       final currencies = data?.map(
         (currencies) {
@@ -41,9 +41,9 @@ extension CurrenciesResponseToEntity on CurrenciesResponse {
           );
         },
       ).toList();
-      return entity.CurrencyEntity(currencies);
+      return entity.CurrenciesEntity(currencies);
     } else {
-      return const entity.CurrencyEntity(null);
+      return const entity.CurrenciesEntity(null);
     }
   }
 }

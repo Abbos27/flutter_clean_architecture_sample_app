@@ -14,7 +14,7 @@ class GetCurrenciesRemoteDataSourceImpl
   Future<CurrenciesResponse> getCurrencies() async {
     try {
       final response = await dio.get(
-        '${Constants.baseUrl}${Urls.get_exchange_rates_url}',
+        '${Urls.baseUrl}${Urls.get_exchange_rates_url}',
       );
       if (response.statusCode == 200 || response.statusCode == 201) {
         return CurrenciesResponse.fromJson(response.data);
@@ -24,7 +24,7 @@ class GetCurrenciesRemoteDataSourceImpl
     } on DioError catch (e) {
       throw ServerException.fromJson(e.response?.data);
     } on FormatException {
-      throw ServerException(message: Warnings.SOMETHING_WENT_WRONG);
+      throw ServerException(message: Warnings.something_went_wrong);
     }
   }
 }

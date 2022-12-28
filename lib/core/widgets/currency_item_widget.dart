@@ -1,6 +1,4 @@
-import 'dart:ffi';
-
-import 'package:currency_app/features/exchange_rates/data/models/currency.dart';
+import 'package:currency_app/features/exchange_rates/domain/entities/currency_entity.dart';
 import 'package:flutter/material.dart';
 
 class CurrencyItemWidget extends StatelessWidget {

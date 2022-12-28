@@ -41,7 +41,7 @@ class MainPage extends StatelessWidget {
               ),
             ];
           },
-          body: TabBarView(
+          body: const TabBarView(
             physics: BouncingScrollPhysics(),
             children: [
               ExchangeRatesPage(),

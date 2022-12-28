@@ -1,17 +1,19 @@
-class Constants {
-  static const String baseUrl = "https://cbu.uz/";
-}
-
 class AppTitle {
+  AppTitle._();
+
   static const String appTitle = "Currency app";
 }
 
 class Urls {
+  Urls._();
+
+  static const String baseUrl = "https://cbu.uz/";
   static const String get_exchange_rates_url = "oz/arkhiv-kursov-valyut/";
 }
 
 class Warnings {
-  static const INTERNET_FAILURE = 'No Internet';
-  static const SOMETHING_WENT_WRONG = 'Something went wrong!';
-}
+  Warnings._();
 
+  static const internet_failure = 'No Internet';
+  static const something_went_wrong = 'Something went wrong!';
+}
